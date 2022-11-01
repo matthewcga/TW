@@ -1,0 +1,23 @@
+Mateusz Cyganek
+
+Struktura projektu
+    -Main
+        -main() wywouje testy
+        -test() wywołanie licznika przy użyciu podanego semafora, wywołąnie wątków testujących, wydruk wyniku
+        -WyscigTest implementuje test
+    -BiSemafor - semafor binarny
+    -ZepsytySemafor - semafor z instrukcją `if` zamiast pętli `while`
+    -Semafor - semafor licznikowy
+
+1.1
+    Zaimplementowane w 'BiSemafor'
+
+1.2
+    Semafor z 'if' zamiast pętli 'while' zaimplementowany w 'ZepsutySemafor'.
+    W testach zwacał błędną wartość różną od 0 (a czasami nawet zdarzały się deadlocki).
+    Użycie 'if' powoduje sprawdzenie warunku tylko raz, przed przebudzeniem się wątku, więc spontaniczne wybudzenie wprowadzi taki semafor w stan nieporządany.
+    Bez ponownego sprawdzenia warunku, większa liczba wątków może znaleść się w sekcji krytycznej.
+1.3
+    Zaimplementowany w 'Semafor'.
+    "Czy semafor binarny jest szczególnym przypadkiem semafora ogólnego?"
+    Tak. Semafor binarny ma tylko jeden stan podniesiony, natomiast w semaforze ogólnym, zmienna semaforowa może przyjmować różne wartości całkowite (ograniczone w zależności od implementcji).

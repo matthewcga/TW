@@ -19,11 +19,4 @@ public class Semafor implements iSemafor {
         if (_czeka > 0) canRelSem.V();
         canAcqSem.V();
     }
-
-    public int getPermits() {
-        canAcqSem.P();
-        int perm = _czeka;
-        canAcqSem.V();
-        return perm;
-    }
 }
