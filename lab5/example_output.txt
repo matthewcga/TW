@@ -1,0 +1,54 @@
+for example_data1:
+D={(a,a),(a,b),(a,c),(b,a),(b,b),(b,d),(c,a),(c,c),(c,d),(d,b),(d,c),(d,d)}
+I={(a,d),(b,c),(c,b),(d,a)}
+Foat’s normal form computed from trace:
+(b) (ad) (a) (bc)
+Foat’s normal form computed from graph:
+(b) (a) (ad) (bc)
+Graph in dot format:
+digraph g{
+6[label=b]
+3 -> 6
+4 -> 6
+5[label=c]
+3 -> 5
+4 -> 5
+4[label=d]
+1 -> 4
+3[label=a]
+2 -> 3
+2[label=a]
+1 -> 2
+1[label=b]
+
+}
+
+
+for example_data2:
+D={(a,a),(a,c),(a,f),(b,b),(b,e),(c,a),(c,c),(c,e),(c,f),(d,d),(d,f),(e,b),(e,c),(e,e),(f,a),(f,c),(f,d),(f,f)}
+I={(a,b),(a,d),(a,e),(b,a),(b,c),(b,d),(b,f),(c,b),(c,d),(d,a),(d,b),(d,c),(d,e),(e,a),(e,d),(e,f),(f,b),(f,e)}
+Foat’s normal form computed from trace:
+(abd) (bc) (c) (ef)
+Foat’s normal form computed from graph:
+(a) (bc) (bcd) (ef)
+Graph in dot format:
+digraph g{
+8[label=e]
+4 -> 8
+7 -> 8
+7[label=b]
+6 -> 7
+6[label=b]
+
+5[label=f]
+3 -> 5
+4 -> 5
+4[label=c]
+2 -> 4
+3[label=d]
+
+2[label=c]
+1 -> 2
+1[label=a]
+
+}
