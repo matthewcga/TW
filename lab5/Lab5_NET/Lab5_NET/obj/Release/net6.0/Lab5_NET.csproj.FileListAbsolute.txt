@@ -1,0 +1,16 @@
+D:\Agh\Agh7\TW\lab5\Lab5_NET\Lab5_NET\bin\Release\net6.0\Lab5_NET.exe
+D:\Agh\Agh7\TW\lab5\Lab5_NET\Lab5_NET\bin\Release\net6.0\GraphGenerator.py
+D:\Agh\Agh7\TW\lab5\Lab5_NET\Lab5_NET\bin\Release\net6.0\Lab5_NET.deps.json
+D:\Agh\Agh7\TW\lab5\Lab5_NET\Lab5_NET\bin\Release\net6.0\Lab5_NET.runtimeconfig.json
+D:\Agh\Agh7\TW\lab5\Lab5_NET\Lab5_NET\bin\Release\net6.0\Lab5_NET.dll
+D:\Agh\Agh7\TW\lab5\Lab5_NET\Lab5_NET\bin\Release\net6.0\Lab5_NET.pdb
+D:\Agh\Agh7\TW\lab5\Lab5_NET\Lab5_NET\obj\Release\net6.0\Lab5_NET.csproj.AssemblyReference.cache
+D:\Agh\Agh7\TW\lab5\Lab5_NET\Lab5_NET\obj\Release\net6.0\Lab5_NET.GeneratedMSBuildEditorConfig.editorconfig
+D:\Agh\Agh7\TW\lab5\Lab5_NET\Lab5_NET\obj\Release\net6.0\Lab5_NET.AssemblyInfoInputs.cache
+D:\Agh\Agh7\TW\lab5\Lab5_NET\Lab5_NET\obj\Release\net6.0\Lab5_NET.AssemblyInfo.cs
+D:\Agh\Agh7\TW\lab5\Lab5_NET\Lab5_NET\obj\Release\net6.0\Lab5_NET.csproj.CoreCompileInputs.cache
+D:\Agh\Agh7\TW\lab5\Lab5_NET\Lab5_NET\obj\Release\net6.0\Lab5_NET.dll
+D:\Agh\Agh7\TW\lab5\Lab5_NET\Lab5_NET\obj\Release\net6.0\refint\Lab5_NET.dll
+D:\Agh\Agh7\TW\lab5\Lab5_NET\Lab5_NET\obj\Release\net6.0\Lab5_NET.pdb
+D:\Agh\Agh7\TW\lab5\Lab5_NET\Lab5_NET\obj\Release\net6.0\Lab5_NET.genruntimeconfig.cache
+D:\Agh\Agh7\TW\lab5\Lab5_NET\Lab5_NET\obj\Release\net6.0\ref\Lab5_NET.dll

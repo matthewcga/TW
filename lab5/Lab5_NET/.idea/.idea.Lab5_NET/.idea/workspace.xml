@@ -4,22 +4,49 @@
     <projectFile>Lab5_NET/Lab5_NET.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67e4802c-32f3-4cf0-96f8-2f5925c8901c" name="Changes" comment="" />
+    <list default="true" id="7060acab-9f66-4096-a0e7-1f8772eaad67" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../GraphGenerator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lab5_NET/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lab5_NET/.idea/dictionaries/superuser.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lab5_NET/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lab5_NET/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab5_NET/DataSerializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/DataSerializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab5_NET/DependencyMatrix.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/DependencyMatrix.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab5_NET/FoatNormalForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/FoatsNormalForm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab5_NET/GraphGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/GraphGenerator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab5_NET/OutputHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/OutputHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab5_NET/Production.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/Production.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab5_NET/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab5_NET/bin/Debug/net6.0/GraphGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/bin/Debug/net6.0/GraphGenerator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab5_NET/bin/Debug/net6.0/Lab5_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/bin/Debug/net6.0/Lab5_NET.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab5_NET/bin/Debug/net6.0/Lab5_NET.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/bin/Debug/net6.0/Lab5_NET.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab5_NET/bin/Debug/net6.0/Lab5_NET.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/bin/Debug/net6.0/Lab5_NET.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/Lab5_NET.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/Lab5_NET.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/Lab5_NET.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/Lab5_NET.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/Lab5_NET.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/Lab5_NET.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/Lab5_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/Lab5_NET.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/Lab5_NET.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/Lab5_NET.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/ref/Lab5_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/ref/Lab5_NET.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/refint/Lab5_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/refint/Lab5_NET.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example_output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../input1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../input1_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../input2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../input2_results.txt" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bf408839e35535896e3625c8578c2bfb7bf56ef7ab2c4549ae59c3a19db9ae/Console.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0b2b71b9a548475f9db13de2a63308dea234a8/9a/28eb332d/KeyValuePair`2.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2HzMvNe0MccYog8RAqqt6fjEhon" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectId" id="2I2A7RmrGLWBeA0g87qf1vPsdSM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -29,16 +56,15 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.24375&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.spelling&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RunManager">
     <configuration name="Lab5_NET" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/Lab5_NET/bin/Debug/net6.0/Lab5_NET.exe" />
-      <option name="PROGRAM_PARAMETERS" value="&quot;D:\Agh\Agh7\TW\lab5\input2.txt&quot;" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;D:\Agh\Agh7\TW\lab5\input1.txt&quot;" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Lab5_NET/bin/Debug/net6.0" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -55,18 +81,20 @@
       </method>
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="1" Folder0="C:\Program Files\JetBrains\Polish Dict" CustomDictionaries="1" CustomDictionary0="C:\Program Files\JetBrains\Polish Dict\pl_PL.dic" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="67e4802c-32f3-4cf0-96f8-2f5925c8901c" name="Changes" comment="" />
-      <created>1669283688414</created>
+      <changelist id="7060acab-9f66-4096-a0e7-1f8772eaad67" name="Changes" comment="" />
+      <created>1669369138483</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1669283688414</updated>
-      <workItem from="1669283692661" duration="150000" />
-      <workItem from="1669283871517" duration="35508000" />
-      <workItem from="1669364255456" duration="3620000" />
-      <workItem from="1669367969606" duration="148000" />
+      <updated>1669369138483</updated>
+      <workItem from="1669369141364" duration="3463000" />
+      <workItem from="1669404648227" duration="6667000" />
+      <workItem from="1669413639165" duration="1043000" />
+      <workItem from="1669416129228" duration="80000" />
+      <workItem from="1669416897041" duration="1095000" />
+      <workItem from="1669476066139" duration="237000" />
     </task>
     <servers />
   </component>
@@ -90,24 +118,35 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <watches-manager>
-      <configuration name="DotNetProject">
-        <watch expression="d" />
-      </configuration>
-    </watches-manager>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
-  </component>
-  <component name="regexState">
-    <option name="map">
-      <map>
-        <entry key="flags" value="0" />
-        <entry key="mode" value="0" />
-        <entry key="regex" value="(19||20)\d\d([- /.])(0[1-9]||1[012])\2(0[1-9]||[12][0-9]||3[01])" />
-        <entry key="text" value="1900-01-01 2007/08/13 1900.01.01 1900 01 01 1900-01.01 1900 13 01 1900 02 31" />
-      </map>
-    </option>
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lab5_NET/DataSerializer.cs</url>
+          <line>149</line>
+          <properties documentPath="D:\Agh\Agh7\TW\lab5\Lab5_NET\Lab5_NET\DataSerializer.cs" initialLine="149" containingFunctionPresentation="method 'GetDataText'">
+            <startOffsets>
+              <option value="5469" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5470" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lab5_NET/DataSerializer.cs</url>
+          <line>112</line>
+          <properties documentPath="D:\Agh\Agh7\TW\lab5\Lab5_NET\Lab5_NET\DataSerializer.cs" initialLine="112" containingFunctionPresentation="method 'AddProduction'">
+            <startOffsets>
+              <option value="3781" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3842" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

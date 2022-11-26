@@ -1,13 +1,16 @@
-from sys import argv
 from os import path
+from sys import argv
+
 import matplotlib.pyplot as plt
 import networkx as nx
 
 
+# zwraca ścieżkę pliku obrazu w którym ma zostać wygenerowany obraz
 def GetOutputFileName(file):
     return f"{path.splitext(file)[0]}_img.png"
 
 
+# zwraca linijkę pliku rezultatów z FNF
 def GetLine(file):
     fl = open(file, "r")
     line = fl.readlines()[-1]
@@ -15,6 +18,8 @@ def GetLine(file):
     return line
 
 
+# przekształca linijkę w graf reprezentowany jako lista
+# warstw które mają zostać połączone między sobą
 def MakeGraph(line):
     line = line.strip()
     line = line.replace("(", "")
@@ -32,6 +37,7 @@ def MakeGraph(line):
     return g
 
 
+# funkcja rysuje graf i zapisuje go do pliku
 def Plot(g, file):
     G, color = nx.Graph(), {"S!": 0}
 
@@ -44,15 +50,14 @@ def Plot(g, file):
 
     nx.draw(
         G,
-        cmap=plt.get_cmap("jet"),
         node_color=[color.get(node, 0.25) for node in G.nodes()],
-        node_size=1000,
+        with_labels=True,
+        cmap=plt.get_cmap("cool"),
     )
-    nx.draw_networkx_labels(G, nx.spring_layout(G))
-    plt.savefig(file)
+    plt.savefig(file, dpi=200)
 
 
-# # # # # MAIN # # # # #
+# # # # # # # # MAIN # # # # # # #
 
 if len(argv) != 2:
     print("Nie podano ścieżki do pliku!")
@@ -60,4 +65,4 @@ if len(argv) != 2:
 
 inputFile, outputFile = argv[1], GetOutputFileName(argv[1])
 Plot(MakeGraph(GetLine(inputFile)), outputFile)
-print(f"Zapisano graf do : '{outputFile}'.")
+print(f"Graf zapisano do: '{outputFile}'.")

@@ -1,0 +1,9 @@
+A = {a, b, c, d}
+w = baadcb
+a) x = x@y
+b) y = y@z
+c) x = x@z
+d) z = y@z
+D = sym{(a, b), (a, c), (b, d), (c, d)}
+I = sym{(a, d), (b, c)}
+FNF([w]) = (b)(ad)(a)(cb)

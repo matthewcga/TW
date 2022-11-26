@@ -1,0 +1,11 @@
+A = {a, b, c, d, e, f}
+w = acdcfbbe
+a) x = x
+b) y = y@z
+c) x = x@z
+d) w = w@v
+e) z = y@z
+f) v = x@v
+D = sym{(a, c), (a, f), (b, e), (c, e), (c, f), (d, f)}
+I = sym{(a, b), (a, d), (a, e), (b, c), (b, d), (b, f), (c, d), (d, e), (e, f)}
+FNF([w]) = (adb)(cb)(c)(fe)
