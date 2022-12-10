@@ -5,34 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7060acab-9f66-4096-a0e7-1f8772eaad67" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../GraphGenerator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lab5_NET/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lab5_NET/.idea/dictionaries/superuser.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/GraphGenerator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/Logic/Productions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/Models/Cell.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/Solvers/MatrixSolver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InputOutput/input1_results_img.png" beforeDir="false" afterPath="$PROJECT_DIR$/../InputOutput/input1_results_img.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Lab5_NET/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lab5_NET/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab5_NET/DataSerializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/DataSerializer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab5_NET/DependencyMatrix.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/DependencyMatrix.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab5_NET/FoatNormalForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/FoatsNormalForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab5_NET/GraphGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/GraphGenerator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab5_NET/OutputHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/OutputHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab5_NET/Production.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/Production.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab5_NET/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab5_NET/bin/Debug/net6.0/GraphGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/bin/Debug/net6.0/GraphGenerator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab5_NET/bin/Debug/net6.0/Lab5_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/bin/Debug/net6.0/Lab5_NET.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab5_NET/bin/Debug/net6.0/Lab5_NET.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/bin/Debug/net6.0/Lab5_NET.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab5_NET/bin/Debug/net6.0/Lab5_NET.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/bin/Debug/net6.0/Lab5_NET.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/Lab5_NET.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/Lab5_NET.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/Lab5_NET.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/Lab5_NET.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/Lab5_NET.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/Lab5_NET.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/Lab5_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/Lab5_NET.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/Lab5_NET.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/Lab5_NET.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/ref/Lab5_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/ref/Lab5_NET.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/refint/Lab5_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5_NET/obj/Debug/net6.0/refint/Lab5_NET.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../example_output.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../input1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../input1_img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../input2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../input2_results.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/Lab6_NET.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/Lab6_NET.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/Logic/MatrixSerializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/Logic/Serializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/Logic/MatrixSolver.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/Logic/OutputHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/Logic/OutputHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/Logic/ProductionManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/Models/Matrix2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/Models/Matrix2D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/Models/Operation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/Models/Parameters.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/Models/Production.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/Models/Production.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/bin/Debug/net6.0/Lab6_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/bin/Debug/net6.0/Lab6_NET.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/bin/Debug/net6.0/Lab6_NET.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/bin/Debug/net6.0/Lab6_NET.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/obj/Debug/net6.0/Lab6_NET.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/obj/Debug/net6.0/Lab6_NET.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/obj/Debug/net6.0/Lab6_NET.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/obj/Debug/net6.0/Lab6_NET.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/obj/Debug/net6.0/Lab6_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/obj/Debug/net6.0/Lab6_NET.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/obj/Debug/net6.0/Lab6_NET.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/obj/Debug/net6.0/Lab6_NET.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/obj/Debug/net6.0/ref/Lab6_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/obj/Debug/net6.0/ref/Lab6_NET.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/obj/Debug/net6.0/refint/Lab6_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab6/Lab6_NET/Lab6_NET/obj/Debug/net6.0/refint/Lab6_NET.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,9 +59,9 @@
 }</component>
   <component name="RunManager">
     <configuration name="Lab5_NET" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/Lab5_NET/bin/Debug/net6.0/Lab5_NET.exe" />
-      <option name="PROGRAM_PARAMETERS" value="&quot;D:\Agh\Agh7\TW\lab5\input1.txt&quot;" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Lab5_NET/bin/Debug/net6.0" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Lab5_NET/bin/Release/net6.0/Lab5_NET.exe" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;D:\Agh\Agh7\TW\lab5\InputOutput\input1.txt&quot;" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Lab5_NET/bin/Release/net6.0" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
@@ -95,6 +91,10 @@
       <workItem from="1669416129228" duration="80000" />
       <workItem from="1669416897041" duration="1095000" />
       <workItem from="1669476066139" duration="237000" />
+      <workItem from="1670403120271" duration="6155000" />
+      <workItem from="1670415967574" duration="938000" />
+      <workItem from="1670577794527" duration="1203000" />
+      <workItem from="1670684656247" duration="590000" />
     </task>
     <servers />
   </component>
@@ -132,19 +132,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Lab5_NET/DataSerializer.cs</url>
-          <line>112</line>
-          <properties documentPath="D:\Agh\Agh7\TW\lab5\Lab5_NET\Lab5_NET\DataSerializer.cs" initialLine="112" containingFunctionPresentation="method 'AddProduction'">
-            <startOffsets>
-              <option value="3781" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3842" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

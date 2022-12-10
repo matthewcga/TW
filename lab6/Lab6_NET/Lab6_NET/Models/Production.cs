@@ -1,22 +1,39 @@
-﻿namespace Lab6_NET.Models;
+using Lab6_NET.Enums;
+
+namespace Lab6_NET.Models;
 
 /// <summary>
-/// Rekord odzwierciedlający produkcje v0 = v1 @ v2.
+/// Produkcja zawiera informacje o wykonanej operacji i komórkach na których została wykonana
 /// </summary>
-public readonly record struct Production(char V0, char? V1, char? V2)
+/// <param name="Operation">Operacja A, B lub C</param>
+/// <param name="Cell1">komórka 1</param>
+/// <param name="Cell2">komórka 2 (jeżeli operacja na dwóch komórkach)</param>
+/// <param name="Pass">przejście algorytmu (informacja dla anychronicznej implementacji)</param>
+public record Production(EOperation Operation, Cell Cell1, Cell? Cell2 = null, int? Pass = null)
 {
     /// <summary>
-    /// Sprawdza czy relacja jest zależna od drugiej
+    /// Sprawdza czy operacje są od siebie zależne
     /// </summary>
-    /// <param name="other">druga produkcja</param>
-    /// <returns>prawda jeżeli produkcje są zależne</returns>
+    /// <param name="other">sprawdzana operacja</param>
+    /// <returns>czy operacje są zależne</returns>
     public bool CheckDependency(Production other)
     {
-        if (V0 == other.V1 || V0 == other.V2) return true; // a modyfikuje parametry b
-        if (other.V0 == V1 || other.V0 == V2) return true; // b modyfikuje parametry a
-        return V0 == other.V0;                             // a i b modyfikują tą samą zmienną
+        /* TODO fix
+        if (Operation == EOperation.A && other.Operation == EOperation.A)
+            return false;
+
+        return
+            Cell1 == other.Cell1 || Cell1 == other.Cell2 || Cell2 == other.Cell1;
+        */
+
+        return
+            Cell1 == other.Cell1 || Cell1 == other.Cell2 ||
+            Cell2 == other.Cell1 || Cell2 == other.Cell2;
     }
+        
 
     public override string ToString() =>
-        $"{V0} = {V1}{(V1.HasValue && V2.HasValue ? "@" : string.Empty)}{V2}";
+        $"{Operation}" +
+        $"({Cell1}" +
+        $"{(Cell2.HasValue ? $", {Cell2}" : string.Empty)})";
 }

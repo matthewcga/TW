@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace Lab6_NET;
+namespace Lab6_NET.Logic;
 
 /// <summary>
 /// Klasa pomagająca wypisywać i zapisywać rezultaty
@@ -9,7 +9,11 @@ public class OutputHelper : IDisposable
 {
     private readonly FileStream _stream;
     private readonly StreamWriter _writer;
-
+    private static int _colorIndex;
+    private static readonly ConsoleColor[] Colors =
+        { ConsoleColor.Yellow, ConsoleColor.Green, ConsoleColor.Cyan, ConsoleColor.Magenta };
+    private static ConsoleColor NextColor => Colors[_colorIndex % Colors.Length];
+    
     
     /// <summary>
     /// Konstruktor przygotowuje się do zapisu do pliku.
@@ -20,16 +24,15 @@ public class OutputHelper : IDisposable
         _stream = new FileStream (path, FileMode.Create, FileAccess.Write);
         _writer = new StreamWriter (_stream);
     }
-
     
+
     /// <summary>
     /// Wypisuje i zapisuje argumenty w podanym kolorze.
     /// </summary>
-    /// <param name="consoleColor">kolor konsoli</param>
     /// <param name="args">argumenty do wypisania</param>
-    public void PrintAndSaveToFile(ConsoleColor consoleColor, params string[] args)
+    public void PrintAndSaveToFile(params string[] args)
     {
-        Console.ForegroundColor = consoleColor;
+        Console.ForegroundColor = NextColor;
         foreach (var arg in args)
         {
             _writer.WriteLine(arg);
@@ -37,20 +40,26 @@ public class OutputHelper : IDisposable
         }
         Console.ResetColor();
     }
-
-
+    
+    
+    /// <summary>
+    /// Zmiana koloru konsoli
+    /// </summary>
+    public static void ChangeSectionColor()
+    { _colorIndex++; }
+    
+    
     /// <summary>
     /// Wypisuje argument w podanym kolorze.
     /// </summary>
-    /// <param name="consoleColor">kolor konsoli</param>
-    /// <param name="message">argument do wypisania</param>
-    public static void Print(ConsoleColor consoleColor, string message)
+    public static void Print(params string[] args)
     {
-        Console.ForegroundColor = consoleColor;
-        Console.WriteLine(message);
+        Console.ForegroundColor = NextColor;
+        foreach (var arg in args)
+            Console.WriteLine(arg);
         Console.ResetColor();
     }
-
+    
     
     /// <summary>
     /// Zakończenie zapisu do pliku.
@@ -60,16 +69,21 @@ public class OutputHelper : IDisposable
         _writer.Close();
         _stream.Close();
     }
-
+    
     
     /// <summary>
     /// Metoda uruchomi skrypt python'owy który wygeneruje graf zależności.
     /// (instancja OutputHelper musi być Disposed żeby można było odczytać plik z rezultatami)
     /// </summary>
-    /// <param name="outFile">plik z rezultatami w którym wpisane są już rezultaty</param>
+    /// <param name="outFile">plik z rezultatami</param>
+    /// <param name="fnf">postać normalna foaty</param>
     /// <exception cref="Exception">Błedy związane z uruchomieniem skryptu</exception>
-    public static void GenerateImage(string outFile)
+    public static void GenerateFnfImage(string outFile, NormalForm fnf)
     {
+        var tmpPath = Path.GetTempFileName();
+        using(var sw = new StreamWriter(tmpPath))
+            sw.Write(fnf.GetCsv());
+
         var assemblyLoc = System.Reflection.Assembly.GetEntryAssembly()?.Location;
         if (string.IsNullOrEmpty(assemblyLoc))
             throw new Exception("Nie znaleziono lokalizacji pliku .exe!");
@@ -80,14 +94,23 @@ public class OutputHelper : IDisposable
         
         var process = new Process();
         process.StartInfo.FileName = "python.exe";
-        process.StartInfo.Arguments = $"-u \"{py}\" \"{outFile}\"";
+        process.StartInfo.Arguments = $"-u \"{py}\" \"{tmpPath}\" \"{outFile}\"";
         process.StartInfo.RedirectStandardOutput = true;
         process.StartInfo.CreateNoWindow = true;
         process.StartInfo.UseShellExecute = false;
         
         process.Start();
         process.WaitForExit();
+        Print(process.StandardOutput.ReadToEnd());
         
-        Print(ConsoleColor.Green, process.StandardOutput.ReadToEnd());
+        File.Delete(tmpPath);
+    }
+
+    
+    public static void Error(Exception exception)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine(exception.Message);
+        Console.ResetColor();
     }
 }

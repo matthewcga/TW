@@ -3,19 +3,22 @@
 namespace Lab6_NET.Logic;
 
 
-public class MatrixSerializer
+/// <summary>
+/// Serializator pliku wejściowego z maceirzą
+/// </summary>
+public static class Serializer
 {
-    private readonly string file;
-
-    public MatrixSerializer(string path)
+    /// <summary>
+    /// Metoda wczytująca plik i zwracająca macierz
+    /// </summary>
+    /// <param name="file">plik wejściowy</param>
+    /// <returns>macierz z wektorem</returns>
+    /// <exception cref="Exception">błąd jeżeli plik nie istnieje</exception>
+    public static Matrix2D SerializeMatrix(string file)
     {
-        if (!File.Exists(path))
+        if (!File.Exists(file))
             throw new Exception("Podano Błędną ścieżkę do pliku!");
-        file = path;
-    }
-    
-    public Matrix2D SerializeMatrix()
-    {
+
         Matrix2D matrix;
         using var lines = File.ReadLines(file).GetEnumerator();
         {
@@ -27,7 +30,7 @@ public class MatrixSerializer
                 lines.MoveNext();
                 using var values = GetParser(lines.Current);
                 for (var j = 0; values.MoveNext(); j++)
-                        matrix[i, j] = values.Current;
+                    matrix[i, j] = values.Current;
             }
             
             lines.MoveNext();
@@ -37,8 +40,9 @@ public class MatrixSerializer
         }
         return matrix;
     }
-
-    private IEnumerator<decimal> GetParser(string line)
+    
+    
+    private static IEnumerator<decimal> GetParser(string line)
     {
         return line
             .Split(" ")

@@ -13,3 +13,4 @@ D:\Agh\Agh7\TW\lab6\Lab6_NET\Lab6_NET\obj\Debug\net6.0\refint\Lab6_NET.dll
 D:\Agh\Agh7\TW\lab6\Lab6_NET\Lab6_NET\obj\Debug\net6.0\Lab6_NET.pdb
 D:\Agh\Agh7\TW\lab6\Lab6_NET\Lab6_NET\obj\Debug\net6.0\Lab6_NET.genruntimeconfig.cache
 D:\Agh\Agh7\TW\lab6\Lab6_NET\Lab6_NET\obj\Debug\net6.0\ref\Lab6_NET.dll
+D:\Agh\Agh7\TW\lab6\Lab6_NET\Lab6_NET\bin\Debug\net6.0\GraphGenerator.py
