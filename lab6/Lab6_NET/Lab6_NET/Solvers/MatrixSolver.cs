@@ -24,23 +24,24 @@ public class MatrixSolver : IPartialSolver
         for (var k = i + 1; k < Matrix.Size; k++)
         {
             var multiplayer = A(new (i,i), new (k, i));
+
             for (var j = 0; j < Matrix.Size + 1; j++)
             {
-                B(new (i, j), multiplayer);
+                B(new (k, j), multiplayer);
                 C(new (k, j), new (i, j));
             }
         }
     }
 
-    
+
     /// <summary>
     /// Operacja A, zwraca wynik dzielenia komórki 1 przez komórkę 2
     /// </summary>
     /// <param name="cell1">komórka 1</param>
     /// <param name="cell2">komórka 2</param>
-    /// <returns>wynik dzielenia komóki 1 przez komórkę 2</returns>
+    /// <returns>wynik dzielenia komórki 1 przez komórkę 2</returns>
     protected decimal A(Cell cell1, Cell cell2)
-    { return Matrix[cell2.Row, cell2.Col] / Matrix[cell1.Row, cell1.Col]; }
+    { return Matrix[cell1.Row, cell1.Col] / Matrix[cell2.Row, cell2.Col]; }
 
 
     /// <summary>

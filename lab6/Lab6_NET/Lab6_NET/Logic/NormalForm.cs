@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using Lab6_NET.Enums;
 using Lab6_NET.Models;
 
 namespace Lab6_NET.Logic;
@@ -17,42 +18,62 @@ public class NormalForm
     /// <param name="word">słowo</param>
     public NormalForm(List<Production> word)
     {
-        var elements = word.Select(x => new WordElement(x, true)).ToArray();
-
-        for (var i = 0; i < word.Count; i++)
+        List<(Production Production, bool Used)> layer = new();
+        HashSet<int> passesA = new(), passesB = new();
+        (Production Production, bool Used)[] elements = word.Select(x => (x, false)).ToArray();
+        
+        for (var i = 0; i < word.Count; i++)                                    // po każdej produkcji
         {
-            if (elements[i].Used) continue;                             // jeżeli już uśyliśmy to pomijamy
-            Mask(i, elements);                                          // sprawdzamy które elementy są zależne
-            var newLayer = new List<Production>() { elements[i].Name }; // dodajemy obecne słowo
-            elements[i].Used = true;                                    // i ustawiamy je na użyte
-
-            for (var j = i + 1; j < word.Count; j++)                 // dla wszystkich kolejnych elementów słowa
-                if (elements[j].Mask && !elements[j].Used)              // sprawdzamy czy są niezamaskowane i nie użyte
-                {
-                    Mask(j, elements);                                  // wykonujemy maskowanie dla elementów które mogą być zależne od obecnego
-                    newLayer.Add(elements[j].Name);                     // dodajemy element
-                    elements[j].Used = true;                            // i ustawiamy na użyte
-                }
+            if (elements[i].Used)                                               // pomiń jeżeli już została wykorzystana
+                continue;
             
-            Fnf.Add(newLayer);
-            ResetMask(elements);
+            MarkUsed(elements, i, layer, passesA, passesB);                     // wstawiamy element do poziomu FNF
+            
+            for (var j = i + 1; j < word.Count; j++)                         // dla wszystkich kolejnych produkcji
+                if (IsConcurrent(elements, j, layer, passesA, passesB))         // jeżeli można wykonać produkcje j współbieżnie z i
+                    MarkUsed(elements, j, layer, passesA, passesB);             // dodajemy produkcje j do poziomu FNF
+
+            Fnf.Add(layer.Select(x => x.Production).ToList()); // wstawiamy wygenerowany poziom do FNF
+            layer.Clear();                                                      // czyścimy warstwę roboczą
         }
     }
-    
-    
-    private void Mask(int startIndex, WordElement[] word)
+
+
+    private bool IsConcurrent(
+        (Production Production, bool Used)[] elements,
+        int i,
+        List<(Production Production, bool Used)> layer,
+        HashSet<int> passesA,
+        HashSet<int> passesB
+    )
     {
-        word[startIndex].Mask = false;
-        for (var i = startIndex + 1; i < word.Length; i++)
-            if (!word[i].Mask || word[startIndex].Name.CheckDependency(word[i].Name))
-                Mask(i, word);
+        if (elements[i].Used)
+            return false;
+        if (elements[i].Production.Operation == EOperation.B && !passesA.Contains(elements[i].Production.Pass))
+            return false;
+        if (elements[i].Production.Operation == EOperation.C && !passesB.Contains(elements[i].Production.Pass))
+            return false;
+        if (layer.Any(x => elements[i].Production.IsDependentOn(x.Production)))
+            return false;
+        return true;
     }
-
-
-    private void ResetMask(WordElement[] word)
+    
+    
+    private void MarkUsed(
+        (Production Production, bool Used)[] elements,
+        int i,
+        List<(Production Production, bool Used)> layer,
+        HashSet<int> passesA,
+        HashSet<int> passesB
+    )
     {
-        foreach (var w in word)
-            w.Mask = true;
+        elements[i].Used = true;
+        layer.Add(elements[i]);
+            
+        if (elements[i].Production.Operation == EOperation.A)
+            passesA.Add(elements[i].Production.Pass);
+        else if (elements[i].Production.Operation == EOperation.B)
+            passesB.Add(elements[i].Production.Pass);
     }
     
     
@@ -74,13 +95,5 @@ public class NormalForm
             sb.Append('\n');
         }
         return sb;
-    }
-    
-    
-    private record WordElement(Production Name, bool Mask)
-    {
-        public Production Name { get; } = Name;
-        public bool Mask { get; set; } = Mask;
-        public bool Used { get; set; }
     }
 }

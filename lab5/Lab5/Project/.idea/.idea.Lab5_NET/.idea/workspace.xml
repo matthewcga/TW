@@ -4,7 +4,26 @@
     <projectFile>Lab5_NET/Lab5_NET.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7060acab-9f66-4096-a0e7-1f8772eaad67" name="Changes" comment="" />
+    <list default="true" id="7060acab-9f66-4096-a0e7-1f8772eaad67" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/Logic/OutputHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/Logic/OutputHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/Logic/Productions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/Logic/Productions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/Logic/Relations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/Logic/Relations.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/Logic/Serializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/Logic/Serializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/Models/Cell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/Models/Cell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/Models/Production.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/Models/Production.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/Solvers/MatrixSolverAsync.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/Solvers/MatrixSolverAsync.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/Solvers/MatrixSolverOperations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/Solvers/MatrixSolverOperations.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/bin/Release/net6.0/Lab6_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/bin/Release/net6.0/Lab6_NET.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/bin/Release/net6.0/Lab6_NET.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/bin/Release/net6.0/Lab6_NET.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/obj/Release/net6.0/Lab6_NET.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/obj/Release/net6.0/Lab6_NET.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/obj/Release/net6.0/Lab6_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/obj/Release/net6.0/Lab6_NET.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/obj/Release/net6.0/Lab6_NET.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/obj/Release/net6.0/Lab6_NET.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/obj/Release/net6.0/ref/Lab6_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/obj/Release/net6.0/ref/Lab6_NET.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/obj/Release/net6.0/refint/Lab6_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lab6/Lab6_NET/Lab6_NET/obj/Release/net6.0/refint/Lab6_NET.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab6/test_results.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lab6/test_results.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab6/test_results_img.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lab6/test_results_img.png" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,6 +85,7 @@
       <workItem from="1669416129228" duration="80000" />
       <workItem from="1669416897041" duration="1095000" />
       <workItem from="1669475842221" duration="26000" />
+      <workItem from="1670756760426" duration="120000" />
     </task>
     <servers />
   </component>

@@ -1,16 +1,19 @@
-﻿using System.Diagnostics;
-using Lab6_NET.Logic;
+﻿using Lab6_NET.Logic;
 using Lab6_NET.Models;
 using Lab6_NET.Solvers;
 
 namespace Lab6_NET;
 
+
 /// <summary>
 /// TO - Lab 6, Mateusz Cyganek.
+/// Program Wypisuje alfabet, słowo, D, I, FNF i tworzy graf zależności na podstawie danych wejścia.
+/// Ścieżkę do pliku z macierzą należy podać jako argument uruchomienia.
+/// Program wygeneruje plik 'results' z wynikiem działania i 'img' z grafem.
 /// </summary>
 public static class Program
 {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
         try
         {
@@ -27,65 +30,65 @@ public static class Program
             // serializacja macierzy
             var matrix = Serializer.SerializeMatrix(inFile);
             OutputHelper.ChangeSectionColor();
-            output.PrintAndSaveToFile("\nWczytana macierz:", $"{matrix}");
+            output.PrintAndWriteToFile("\nWczytana macierz:", $"{matrix}");
             
             
-            // stworzenie listy operacji potrzebnych do przekształcenia macierzy do postaci gónej trójkątnej
-            var solver = new MatrixSolverOperations((Matrix2D)matrix.Clone());
-            solver.SolvePartially();
+            // stworzenie listy operacji potrzebnych do przekształcenia macierzy do postaci górnej trójkątnej
+            var solverOperations = new MatrixSolverProductions((Matrix2D)matrix.Clone());
+            solverOperations.SolvePartially();
             
-            
+    
             // wypisanie alfabetu
-            var alphabet = solver.Operations.ToHashSet();
+            var alphabet = solverOperations.Operations.ToHashSet();
             OutputHelper.ChangeSectionColor();
-            output.PrintAndSaveToFile("\nAlfabet produkcji:", Productions.GetAlphabet(alphabet));
+            output.PrintAndWriteToFile("\nAlfabet produkcji:", Productions.GetAlphabet(alphabet));
             OutputHelper.ChangeSectionColor();
-            output.PrintAndSaveToFile("\nSłowo:", Productions.GetWord(solver.Operations));
+            output.PrintAndWriteToFile("\nSłowo:", Productions.GetWord(solverOperations.Operations));
 
             
             // wypisanie relacji zależności i niezależności
             var (d, i) = Relations.GetRelations(alphabet);
             OutputHelper.ChangeSectionColor();
-            output.PrintAndSaveToFile("\nRelacje zależności:", d);
+            output.PrintAndWriteToFile("\nRelacje zależności:", d);
             OutputHelper.ChangeSectionColor();
-            output.PrintAndSaveToFile("\nRelacje niezależności:", i);
+            output.PrintAndWriteToFile("\nRelacje niezależności:", i);
 
-            
+
             // wypisanie postaci normalnej Foaty
             OutputHelper.ChangeSectionColor();
-            output.PrintAndSaveToFile("\nPostać normalna Foaty:");
-            var fnf = new NormalForm(solver.Operations);
-            output.PrintAndSaveToFile(fnf.GetFnfText());
-            
+            output.PrintAndWriteToFile("\nPostać normalna Foaty:");
+            var fnf = new NormalForm(solverOperations.Operations);
+            output.PrintAndWriteToFile(fnf.GetFnfText());
+          
             
             // rozwiązanie macierzy
             OutputHelper.ChangeSectionColor();
-            output.PrintAndSaveToFile("\nOczekiwany wynik:");
+            output.PrintAndWriteToFile("\nOczekiwany wynik:");
             var fullSolver = new MatrixSolverFull((Matrix2D)matrix.Clone());
             fullSolver.SolvePartially();
-            output.PrintAndSaveToFile($"{fullSolver.Matrix}\n");
+            output.PrintAndWriteToFile($"{fullSolver.Matrix}\n");
             fullSolver.FinishSolving();
-            output.PrintAndSaveToFile($"{fullSolver.Matrix}");
-
+            output.PrintAndWriteToFile($"{fullSolver.Matrix}");
+            
             
             // rozwiązanie macierzy współbieżnie
             OutputHelper.ChangeSectionColor();
-            output.PrintAndSaveToFile("\nOtrzymany (współbieżnie) wynik:");
+            output.PrintAndWriteToFile("\nOtrzymany (współbieżnie) wynik:");
             var asyncSolver = new MatrixSolverAsync((Matrix2D)matrix.Clone(), fnf);
             asyncSolver.SolvePartially();
-            output.PrintAndSaveToFile($"{asyncSolver.Matrix}\n");
+            output.PrintAndWriteToFile($"{asyncSolver.Matrix}\n");
             asyncSolver.FinishSolving();
-            output.PrintAndSaveToFile($"{asyncSolver.Matrix}");
-            
-            
+            output.PrintAndWriteToFile($"{asyncSolver.Matrix}");
+
+
             output.Dispose();
             OutputHelper.ChangeSectionColor();
             OutputHelper.Print($"\nWynik zapisano do: '{outFile}'\n");
             
             
-            // generowanie grafu zeleżności
+            // generowanie grafu zależności
             OutputHelper.ChangeSectionColor();
-            OutputHelper.GenerateFnfImage(outFile, fnf);
+            GraphHelper.GenerateFnfImage(outFile, fnf);
             
             
             Environment.Exit(0);

@@ -4,7 +4,7 @@ namespace Lab6_NET.Logic;
 
 
 /// <summary>
-/// Serializator pliku wejściowego z maceirzą
+/// Serializator pliku wejściowego z macierzą
 /// </summary>
 public static class Serializer
 {

@@ -9,7 +9,7 @@ namespace Lab6_NET.Logic;
 public static class Relations
 {
     /// <summary>
-    /// Metdoa zwraca dwa stringi, relacji zależności  i niezależnośći
+    /// Metoda zwraca dwa stringi, relacji zależności  i niezależności
     /// </summary>
     /// <param name="alphabet">alfabety produkcji</param>
     /// <returns>relacja zależności, relacja niezależności</returns>
@@ -18,13 +18,12 @@ public static class Relations
         var array = alphabet.ToArray();
         List<(Production, Production)> d = new(), i = new();
         
-        for (var a = 0; a < array.Length; a++)
-        for (var b = a + 1; b < array.Length; b++)
-            (array[a].CheckDependency(array[b]) ? d : i).Add((array[a], array[b]));
-        
+        foreach (var p1 in array)
+            foreach (var p2 in array)
+                (p1.IsDependentOn(p2) ? d : i).Add((p1, p2));
+
         return (
             $"D = sym{{\n{string.Join("\n", d.Select(x => $"[{x.Item1}, {x.Item2}]"))}\n}}",
-            $"I = sym{{\n{string.Join("\n", i.Select(x => $"[{x.Item1}, {x.Item2}]"))}\n}}"
-            );
+            $"I = sym{{\n{string.Join("\n", i.Select(x => $"[{x.Item1}, {x.Item2}]"))}\n}}");
     }
 }

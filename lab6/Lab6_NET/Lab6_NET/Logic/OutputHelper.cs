@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace Lab6_NET.Logic;
+﻿namespace Lab6_NET.Logic;
 
 /// <summary>
 /// Klasa pomagająca wypisywać i zapisywać rezultaty
@@ -12,7 +10,7 @@ public class OutputHelper : IDisposable
     private static int _colorIndex;
     private static readonly ConsoleColor[] Colors =
         { ConsoleColor.Yellow, ConsoleColor.Green, ConsoleColor.Cyan, ConsoleColor.Magenta };
-    private static ConsoleColor NextColor => Colors[_colorIndex % Colors.Length];
+    private static ConsoleColor ConsoleColor => Colors[_colorIndex % Colors.Length];
     
     
     /// <summary>
@@ -30,9 +28,9 @@ public class OutputHelper : IDisposable
     /// Wypisuje i zapisuje argumenty w podanym kolorze.
     /// </summary>
     /// <param name="args">argumenty do wypisania</param>
-    public void PrintAndSaveToFile(params string[] args)
+    public void PrintAndWriteToFile(params string[] args)
     {
-        Console.ForegroundColor = NextColor;
+        Console.ForegroundColor = ConsoleColor;
         foreach (var arg in args)
         {
             _writer.WriteLine(arg);
@@ -50,18 +48,6 @@ public class OutputHelper : IDisposable
     
     
     /// <summary>
-    /// Wypisuje argument w podanym kolorze.
-    /// </summary>
-    public static void Print(params string[] args)
-    {
-        Console.ForegroundColor = NextColor;
-        foreach (var arg in args)
-            Console.WriteLine(arg);
-        Console.ResetColor();
-    }
-    
-    
-    /// <summary>
     /// Zakończenie zapisu do pliku.
     /// </summary>
     public void Dispose()
@@ -72,40 +58,16 @@ public class OutputHelper : IDisposable
     
     
     /// <summary>
-    /// Metoda uruchomi skrypt python'owy który wygeneruje graf zależności.
-    /// (instancja OutputHelper musi być Disposed żeby można było odczytać plik z rezultatami)
+    /// Wypisuje argument w podanym kolorze.
     /// </summary>
-    /// <param name="outFile">plik z rezultatami</param>
-    /// <param name="fnf">postać normalna foaty</param>
-    /// <exception cref="Exception">Błedy związane z uruchomieniem skryptu</exception>
-    public static void GenerateFnfImage(string outFile, NormalForm fnf)
+    public static void Print(params string[] args)
     {
-        var tmpPath = Path.GetTempFileName();
-        using(var sw = new StreamWriter(tmpPath))
-            sw.Write(fnf.GetCsv());
-
-        var assemblyLoc = System.Reflection.Assembly.GetEntryAssembly()?.Location;
-        if (string.IsNullOrEmpty(assemblyLoc))
-            throw new Exception("Nie znaleziono lokalizacji pliku .exe!");
-        
-        var py = $"{Path.GetDirectoryName(assemblyLoc)}\\GraphGenerator.py";
-        if (!File.Exists(py))
-            throw new Exception("Nie znaleziono skryptu generującego grafy!");
-        
-        var process = new Process();
-        process.StartInfo.FileName = "python.exe";
-        process.StartInfo.Arguments = $"-u \"{py}\" \"{tmpPath}\" \"{outFile}\"";
-        process.StartInfo.RedirectStandardOutput = true;
-        process.StartInfo.CreateNoWindow = true;
-        process.StartInfo.UseShellExecute = false;
-        
-        process.Start();
-        process.WaitForExit();
-        Print(process.StandardOutput.ReadToEnd());
-        
-        File.Delete(tmpPath);
+        Console.ForegroundColor = ConsoleColor;
+        foreach (var arg in args)
+            Console.WriteLine(arg);
+        Console.ResetColor();
     }
-
+    
     
     public static void Error(Exception exception)
     {
