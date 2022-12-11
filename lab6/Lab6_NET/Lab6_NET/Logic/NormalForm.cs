@@ -22,19 +22,27 @@ public class NormalForm
         HashSet<int> passesA = new(), passesB = new();
         (Production Production, bool Used)[] elements = word.Select(x => (x, false)).ToArray();
         
-        for (var i = 0; i < word.Count; i++)                                    // po każdej produkcji
+        // po każdej produkcji
+        for (var i = 0; i < word.Count; i++)               
         {
-            if (elements[i].Used)                                               // pomiń jeżeli już została wykorzystana
+            // pomiń jeżeli już została wykorzystana
+            if (elements[i].Used)                 
                 continue;
             
-            MarkUsed(elements, i, layer, passesA, passesB);                     // wstawiamy element do poziomu FNF
+            // wstawiamy element do poziomu FNF
+            MarkUsed(elements, i, layer, passesA, passesB); 
             
-            for (var j = i + 1; j < word.Count; j++)                         // dla wszystkich kolejnych produkcji
-                if (IsConcurrent(elements, j, layer, passesA, passesB))         // jeżeli można wykonać produkcje j współbieżnie z i
-                    MarkUsed(elements, j, layer, passesA, passesB);             // dodajemy produkcje j do poziomu FNF
+            // dla wszystkich kolejnych produkcji
+            for (var j = i + 1; j < word.Count; j++)
+                // jeżeli można wykonać produkcje j współbieżnie z i
+                if (IsConcurrent(elements, j, layer, passesA, passesB))
+                    // dodajemy produkcje j do poziomu FNF
+                    MarkUsed(elements, j, layer, passesA, passesB);
 
-            Fnf.Add(layer.Select(x => x.Production).ToList()); // wstawiamy wygenerowany poziom do FNF
-            layer.Clear();                                                      // czyścimy warstwę roboczą
+            // wstawiamy wygenerowany poziom do FNF
+            Fnf.Add(layer.Select(x => x.Production).ToList());
+            // czyścimy warstwę roboczą
+            layer.Clear();  
         }
     }
 

@@ -25,6 +25,13 @@ public class Matrix2D : ICloneable
     }
     
     
+    public decimal this[Cell cell]
+    {
+        get => Matrix[cell.Row][cell.Col];
+        set => Matrix[cell.Row][cell.Col] = value;
+    }
+    
+    
     public decimal this[int row, int col]
     {
         get => Matrix[row][col];

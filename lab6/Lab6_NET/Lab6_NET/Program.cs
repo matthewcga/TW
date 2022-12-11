@@ -39,11 +39,11 @@ public static class Program
             
     
             // wypisanie alfabetu
-            var alphabet = solverOperations.Operations.ToHashSet();
+            var alphabet = solverOperations.Productions.ToHashSet();
             OutputHelper.ChangeSectionColor();
             output.PrintAndWriteToFile("\nAlfabet produkcji:", Productions.GetAlphabet(alphabet));
             OutputHelper.ChangeSectionColor();
-            output.PrintAndWriteToFile("\nSłowo:", Productions.GetWord(solverOperations.Operations));
+            output.PrintAndWriteToFile("\nSłowo:", Productions.GetWord(solverOperations.Productions));
 
             
             // wypisanie relacji zależności i niezależności
@@ -57,7 +57,7 @@ public static class Program
             // wypisanie postaci normalnej Foaty
             OutputHelper.ChangeSectionColor();
             output.PrintAndWriteToFile("\nPostać normalna Foaty:");
-            var fnf = new NormalForm(solverOperations.Operations);
+            var fnf = new NormalForm(solverOperations.Productions);
             output.PrintAndWriteToFile(fnf.GetFnfText());
           
             

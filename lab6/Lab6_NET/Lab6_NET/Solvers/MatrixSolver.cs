@@ -41,7 +41,7 @@ public class MatrixSolver : IPartialSolver
     /// <param name="cell2">komórka 2</param>
     /// <returns>wynik dzielenia komórki 1 przez komórkę 2</returns>
     protected decimal A(Cell cell1, Cell cell2)
-    { return Matrix[cell1.Row, cell1.Col] / Matrix[cell2.Row, cell2.Col]; }
+    { return Matrix[cell1] / Matrix[cell2]; }
 
 
     /// <summary>
@@ -50,7 +50,7 @@ public class MatrixSolver : IPartialSolver
     /// <param name="cell1">komórka 1</param>
     /// <param name="value">mnożnik</param>
     protected void B(Cell cell1, decimal value)
-    { Matrix[cell1.Row, cell1.Col] *= value; }
+    { Matrix[cell1] *= value; }
 
 
     /// <summary>
@@ -59,5 +59,5 @@ public class MatrixSolver : IPartialSolver
     /// <param name="cell1">komórka 1</param>
     /// <param name="cell2">komórka 2</param>
     protected void C(Cell cell1, Cell cell2)
-    { Matrix[cell1.Row, cell1.Col] -= Matrix[cell2.Row, cell2.Col]; }
+    { Matrix[cell1] -= Matrix[cell2]; }
 }

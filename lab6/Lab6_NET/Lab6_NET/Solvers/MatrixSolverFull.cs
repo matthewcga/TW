@@ -36,5 +36,5 @@ public class MatrixSolverFull : MatrixSolver, IFullSolver
     /// <param name="cell1">przekazana komórka</param>
     /// <returns>odwrotność komórki</returns>
     private decimal A(Cell cell1)
-    { return 1.0m / Matrix[cell1.Row, cell1.Col]; }
+    { return 1.0m / Matrix[cell1]; }
 }
