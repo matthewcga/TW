@@ -29,7 +29,7 @@ public class MatrixSolverProductions : MatrixSolver, IPartialSolver
             for (var j = 0; j < Matrix.Size + 1; j++)
             {
                 Productions.Add(new (EOperation.B, new (k, j), Cell.Empty, pass));
-                Productions.Add(new (EOperation.C, new (k, j), new (i,j), pass));
+                Productions.Add(new (EOperation.C, new (k, j), new (i, j), pass));
             }
         }
     }

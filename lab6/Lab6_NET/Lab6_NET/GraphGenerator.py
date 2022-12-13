@@ -8,45 +8,30 @@ import networkx as nx
 # zwraca warstwy FNF z pliku .tmp
 def GetFnf(file):
     fl = open(file, "r")
-    lines, fnf, chDict = fl.readlines(), [], dict()
+    lines, fnf, = fl.readlines(), []
 
     for layer in lines:
-        fnfLayer, productions = [], layer.split(";")
-        for production in productions:
-            if production == "\n":
+        edges, fnfLayer = layer.split(";"), []
+        for edge in edges:
+            verts = edge.split(".")
+            if len(verts) != 2:
                 continue
-            elems = production.split(".")
-
-            v = 1 if not elems[0] in chDict else chDict[elems[0]] + 1
-            chDict.update({elems[0]: v})
-
-            if elems[0] == "B":
-                fnfLayer.append((elems[0], chDict[elems[0]], elems[1]))
-            else:
-                fnfLayer.append((elems[0], chDict[elems[0]], elems[1], elems[2]))
+            fnfLayer.append((verts[0], verts[1]))
         fnf.append(fnfLayer)
 
     return fnf
 
 
-def GetNodeName(node):
-    name = f"{node[1]}-{node[0]}({node[2]}"
-    if len(node) == 4:
-        name += f", {node[3]}"
-    name += ")"
-    return name
-
-
 # funkcja rysuje graf i zapisuje go do pliku
 def Plot(g, file):
-    G, color = nx.Graph(), {"S!": 0}
+    G, color, i = nx.Graph(), {"S!": 0}, 0
 
-    for curent in range(0, len(g) - 1):
-        for i in range(0, len(g[curent])):
-            lower = curent + 1
-            for j in range(0, len(g[lower])):
-                color.update({GetNodeName(g[lower][j]): lower / len(g)})
-                G.add_edge(GetNodeName(g[curent][i]), GetNodeName(g[lower][j]))
+    for layer in g:
+        for edge in layer:
+            color.update({edge[0]: i / len(g)})
+            color.update({edge[1]: (i + 1) / len(g)})
+            G.add_edge(edge[0], edge[1])
+        i += 1
 
     nx.draw(
         G,
@@ -59,12 +44,14 @@ def Plot(g, file):
 
 
 # # # # # # # # MAIN # # # # # # #
+try:
+    if len(argv) != 3:
+        stdout.write("Nie podano ścieżek do plików!")
+        exit(2)
 
-if len(argv) != 3:
-    stdout.write("Nie podano ścieżek do plików!")
-    exit(1)
-
-inFile, imgFile = argv[1], argv[2]
-Plot(GetFnf(inFile), imgFile)
-stdout.write(f"Graf zapisano do: '{imgFile}'")
-exit(0)
+    inFile, imgFile = argv[1], argv[2]
+    Plot(GetFnf(inFile), imgFile)
+    stdout.write(f"Graf zapisano do: '{imgFile}'")
+    exit(0)
+except Exception as e:
+    print(e)

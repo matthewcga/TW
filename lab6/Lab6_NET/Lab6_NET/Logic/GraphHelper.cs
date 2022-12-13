@@ -19,7 +19,7 @@ public static class GraphHelper
         
         var tmpFile = Path.GetTempFileName();
         using(var sw = new StreamWriter(tmpFile))
-            sw.Write(fnf.GetCsv());
+            sw.Write(fnf.GetGraphNodesCsv());
 
         var assemblyLoc = System.Reflection.Assembly.GetEntryAssembly()?.Location;
         if (string.IsNullOrEmpty(assemblyLoc))

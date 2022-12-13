@@ -49,7 +49,7 @@ public record Production(EOperation Operation, Cell Cell1, Cell Cell2, int Pass)
     public override string ToString()
     { 
         return
-            $"{Operation}" +
+            $"{Operation} {Pass} " +
             $"({Cell1}" +
             $"{(Operation != EOperation.B ? $", {Cell2}" : string.Empty)})";
     }

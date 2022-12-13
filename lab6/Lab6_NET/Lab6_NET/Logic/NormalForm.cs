@@ -15,7 +15,7 @@ public class NormalForm
     /// <summary>
     /// Konstruktor klasy FNF, tworzy FNF na podstawie słowa
     /// </summary>
-    /// <param name="word">słowo</param>
+     /// <param name="word">słowo</param>
     public NormalForm(List<Production> word)
     {
         List<(Production Production, bool Used)> layer = new();
@@ -93,14 +93,25 @@ public class NormalForm
     /// Metoda pomocnicza dla tworzenia grafu
     /// Przekazuje plik csv do skryptu .py z FNF
     /// </summary>
-    public StringBuilder GetCsv()
+    public StringBuilder GetGraphNodesCsv()
     {
         StringBuilder sb = new();
-        foreach (var layer in Fnf)
+        for (var i = 0; i < Fnf.Count - 1; i++)
         {
-            foreach (var production in layer)
-                sb.Append($"{production.Operation}.{production.Cell1}.{production.Cell2};");
-            sb.Append('\n');
+            foreach (var current in Fnf[i])
+                sb.Append(string.Concat(current.Operation switch
+                {
+                    EOperation.A => Fnf[i + 1]
+                        .Where(x => x.Pass == current.Pass)
+                        .Select(x => $"{current}.{x};"),
+                    EOperation.B => Fnf[i + 1]
+                        .Where(x => x.Pass == current.Pass && x.Cell1 == current.Cell1)
+                        .Select(x => $"{current}.{x};"),
+                    EOperation.C => Fnf[i + 1]
+                        .Select(x => $"{current}.{x};"),
+                    _ => throw new ArgumentOutOfRangeException()
+                }));
+            sb.AppendLine(";");
         }
         return sb;
     }
