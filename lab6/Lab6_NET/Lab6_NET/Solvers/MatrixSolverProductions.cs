@@ -24,12 +24,12 @@ public class MatrixSolverProductions : MatrixSolver, IPartialSolver
         for (var i = 0; i < Matrix.Size - 1; i++)
         for (var k = i + 1; k < Matrix.Size; k++, pass++)
         {
-            Productions.Add(new (EOperation.A, pass, new (i, i), new (k, i)));
+            Productions.Add(new (EOperation.A, new (i, i), new (k, i), pass));
 
             for (var j = 0; j < Matrix.Size + 1; j++)
             {
-                Productions.Add(new (EOperation.B, pass, new (k, j), Cell.Empty));
-                Productions.Add(new (EOperation.C, pass, new (k, j), new (i,j)));
+                Productions.Add(new (EOperation.B, new (k, j), Cell.Empty, pass));
+                Productions.Add(new (EOperation.C, new (k, j), new (i,j), pass));
             }
         }
     }

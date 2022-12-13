@@ -9,7 +9,7 @@ namespace Lab6_NET.Models;
 /// <param name="Pass">przejście algorytmu (informacja dla asynchronicznej implementacji)</param>
 /// <param name="Cell1">komórka 1</param>
 /// <param name="Cell2">komórka 2 (jeżeli operacja na dwóch komórkach)</param>
-public record Production(EOperation Operation, int Pass, Cell Cell1, Cell Cell2)
+public record Production(EOperation Operation, Cell Cell1, Cell Cell2, int Pass)
 {
     /// <summary>
     /// Sprawdza czy operacje są od siebie zależne
