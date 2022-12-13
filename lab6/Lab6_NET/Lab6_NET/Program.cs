@@ -19,11 +19,10 @@ public static class Program
         {
             if (args.Length != 1)
                 throw new Exception("Podaj ścieżkę do pliku z danymi jako argument uruchomienia programu!");
-            
-            
-            string
-                inFile = args[0],
-                outFile = $"{Path.GetDirectoryName(inFile)}\\{Path.GetFileNameWithoutExtension(inFile)}_results.txt";
+
+
+            var inFile = args[0];
+            (var outFile, var imgFile) = OutputHelper.GetFilePaths(inFile);
             var output = new OutputHelper(outFile);
             
             
@@ -88,9 +87,11 @@ public static class Program
             
             // generowanie grafu zależności
             OutputHelper.ChangeSectionColor();
-            GraphHelper.GenerateFnfImage(outFile, fnf);
-            
-            
+            if (GraphHelper.GenerateFnfImage(imgFile, fnf))
+                GraphHelper.ShowGraph(imgFile);
+            else
+                OutputHelper.Print("Niepowodzenie przy generowaniu obrazu!");
+
             Environment.Exit(0);
         }
         catch (Exception ex)

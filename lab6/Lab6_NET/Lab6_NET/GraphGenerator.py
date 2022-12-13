@@ -5,11 +5,6 @@ import matplotlib.pyplot as plt
 import networkx as nx
 
 
-# zwraca ścieżkę pliku obrazu w którym ma zostać wygenerowany obraz
-def GetOutputFileName(file):
-    return f"{path.splitext(file)[0]}_img.png"
-
-
 # zwraca warstwy FNF z pliku .tmp
 def GetFnf(file):
     fl = open(file, "r")
@@ -69,7 +64,7 @@ if len(argv) != 3:
     stdout.write("Nie podano ścieżek do plików!")
     exit(1)
 
-inFile, outFile = argv[1], GetOutputFileName(argv[2])
-Plot(GetFnf(inFile), outFile)
-stdout.write(f"Graf zapisano do: '{outFile}'")
+inFile, imgFile = argv[1], argv[2]
+Plot(GetFnf(inFile), imgFile)
+stdout.write(f"Graf zapisano do: '{imgFile}'")
 exit(0)

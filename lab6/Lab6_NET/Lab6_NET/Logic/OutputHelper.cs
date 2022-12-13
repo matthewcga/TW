@@ -75,4 +75,10 @@ public class OutputHelper : IDisposable
         Console.WriteLine(exception.Message);
         Console.ResetColor();
     }
+
+    public static (string outFile, string imgFile) GetFilePaths(string inFile)
+    {
+        var fileBase = $"{Path.GetDirectoryName(inFile)}\\{Path.GetFileNameWithoutExtension(inFile)}";
+        return ($"{fileBase}_results.txt", $"{fileBase}_graph.png");
+    }
 }

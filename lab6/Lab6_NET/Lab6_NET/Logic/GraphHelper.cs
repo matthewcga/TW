@@ -8,11 +8,15 @@ public static class GraphHelper
     /// Metoda uruchomi skrypt python który wygeneruje graf zależności.
     /// (instancja OutputHelper musi być Disposed żeby można było odczytać plik z rezultatami)
     /// </summary>
-    /// <param name="outFile">plik z rezultatami</param>
+    /// <param name="imgFile">plik grafu</param>
     /// <param name="fnf">postać normalna Foaty</param>
+    /// <returns>Czy generowanie grafu powiodło się</returns>
     /// <exception cref="Exception">Błędy związane z uruchomieniem skryptu</exception>
-    public static void GenerateFnfImage(string outFile, NormalForm fnf)
+    public static bool GenerateFnfImage(string imgFile, NormalForm fnf)
     {
+        if (File.Exists(imgFile))
+            File.Delete(imgFile);
+        
         var tmpFile = Path.GetTempFileName();
         using(var sw = new StreamWriter(tmpFile))
             sw.Write(fnf.GetCsv());
@@ -27,7 +31,7 @@ public static class GraphHelper
         
         var process = new Process();
         process.StartInfo.FileName = "python.exe";
-        process.StartInfo.Arguments = $"-u \"{py}\" \"{tmpFile}\" \"{outFile}\"";
+        process.StartInfo.Arguments = $"-u \"{py}\" \"{tmpFile}\" \"{imgFile}\"";
         process.StartInfo.RedirectStandardOutput = true;
         process.StartInfo.CreateNoWindow = true;
         process.StartInfo.UseShellExecute = false;
@@ -37,5 +41,15 @@ public static class GraphHelper
         OutputHelper.Print(process.StandardOutput.ReadToEnd());
         
         File.Delete(tmpFile);
+
+        return File.Exists(imgFile);
+    }
+
+    public static void ShowGraph(string imgFile)
+    {
+        var process = new Process();
+        process.StartInfo.FileName = imgFile;
+        process.StartInfo.UseShellExecute = true;
+        process.Start();
     }
 }
