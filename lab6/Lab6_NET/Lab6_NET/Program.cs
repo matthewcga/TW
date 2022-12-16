@@ -22,7 +22,7 @@ public static class Program
 
 
             var inFile = args[0];
-            (var outFile, var imgFile) = OutputHelper.GetFilePaths(inFile);
+            var (outFile, imgFile) = OutputHelper.GetFilePaths(inFile);
             var output = new OutputHelper(outFile);
             
             
