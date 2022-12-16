@@ -30,6 +30,6 @@ public class MatrixSolverAsync : MatrixSolverFull, IFullSolver
             Task.WaitAll(level.Select(Invoke).ToArray());
     }
 
-    private new async Task Invoke(Production production)
-    { await Task.Run(() => base.Invoke(production)); }
+    private new Task Invoke(Production production)
+    { return Task.Run(() => base.Invoke(production)); }
 }
