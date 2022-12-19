@@ -39,6 +39,12 @@ public class OutputHelper : IDisposable
         Console.ResetColor();
     }
     
+    public void WriteToFile(params string[] args)
+    {
+        foreach (var arg in args)
+            _writer.WriteLine(arg);
+    }
+    
     
     /// <summary>
     /// Zmiana koloru konsoli
@@ -76,9 +82,9 @@ public class OutputHelper : IDisposable
         Console.ResetColor();
     }
 
-    public static (string outFile, string imgFile) GetFilePaths(string inFile)
+    public static (string outFile, string imgFile, string slnFile) GetFilePaths(string inFile)
     {
         var fileBase = $"{Path.GetDirectoryName(inFile)}\\{Path.GetFileNameWithoutExtension(inFile)}";
-        return ($"{fileBase}_results.txt", $"{fileBase}_graph.png");
+        return ($"{fileBase}_results.txt", $"{fileBase}_graph.png", $"{fileBase}_solution.txt");
     }
 }

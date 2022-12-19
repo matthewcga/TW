@@ -57,4 +57,16 @@ public class Matrix2D : ICloneable
             Array.Copy(Matrix[i], 0, matrix.Matrix[i], 0, Size + 1);
         return matrix;
     }
+    
+    public string ToShortString()
+    {
+        StringBuilder sb = new();
+        sb.AppendLine(Size.ToString());
+        
+        for (var i = 0; i < Size; i++)
+            sb.AppendLine(string.Join(" ", Matrix[i][..Size]));
+        
+        sb.AppendLine(string.Join(" ", Matrix[..].Select(x => x[Size])));
+        return sb.ToString();
+    }
 }

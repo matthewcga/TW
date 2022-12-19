@@ -22,7 +22,7 @@ public static class Program
 
 
             var inFile = args[0];
-            var (outFile, imgFile) = OutputHelper.GetFilePaths(inFile);
+            var (outFile, imgFile, slnFile) = OutputHelper.GetFilePaths(inFile);
             var output = new OutputHelper(outFile);
             
             
@@ -34,7 +34,7 @@ public static class Program
             
             // stworzenie listy operacji potrzebnych do przekształcenia macierzy do postaci górnej trójkątnej
             var solverOperations = new MatrixSolverProductions((Matrix2D)matrix.Clone());
-            solverOperations.SolvePartially();
+            solverOperations.SolvePartially(); // zapisuje operacje do listy produkcji
             
     
             // wypisanie alfabetu
@@ -82,7 +82,14 @@ public static class Program
 
             output.Dispose();
             OutputHelper.ChangeSectionColor();
-            OutputHelper.Print($"\nWynik zapisano do: '{outFile}'\n");
+            OutputHelper.Print($"\nWynik zapisano do: '{outFile}'");
+            
+            
+            output = new OutputHelper(slnFile);
+            output.WriteToFile(asyncSolver.Matrix.ToShortString());
+            output.Dispose();
+            OutputHelper.ChangeSectionColor();
+            OutputHelper.Print($"\nRozwiązanie zapisano do: '{slnFile}'\n");
             
             
             // generowanie grafu zależności
